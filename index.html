@@ -3,703 +3,487 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vidhi Agrawal — A little corner of the internet</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Vidhi Agrawal — Digital Journey Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #1a1208;
-  --paper: #FAF6EF;
-  --paper2: #F3EDE2;
-  --rust: #C1440E;
-  --gold: #C8922A;
-  --sage: #6B7F5E;
-  --dusty: #8B7355;
-  --muted: #9a8c7a;
-  --light: #E8E0D4;
-  --ff-head: 'Playfair Display', Georgia, serif;
-  --ff-body: 'Libre Baskerville', Georgia, serif;
-  --ff-sans: 'Jost', sans-serif;
+  --bg: #FAFAFA;
+  --surface: #F4F4F4;
+  --border: #E8E8E8;
+  --ink: #111111;
+  --ink-2: #444444;
+  --ink-3: #888888;
+  --accent: #1A6B4A;
+  --accent-light: #EAF3EE;
+  --ff-head: 'DM Serif Display', Georgia, serif;
+  --ff-body: 'DM Sans', sans-serif;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--paper);
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--ff-body);
-  font-size: 16px;
-  line-height: 1.7;
-  overflow-x: hidden;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
-body::before {
-  content: '';
-  position: fixed; inset: 0; z-index: 0;
-  pointer-events: none;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 300px;
-}
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
 
 /* NAV */
-header {
+nav {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(250,246,239,0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--light);
-  padding: 0 clamp(24px,5vw,80px);
+  background: rgba(250,250,250,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  max-width: 1200px; margin: 0 auto;
+  max-width: 680px; margin: 0 auto; padding: 0 24px;
+  height: 56px;
   display: flex; align-items: center; justify-content: space-between;
-  height: 64px;
 }
-.nav-logo {
-  font-family: var(--ff-head);
-  font-size: 1.3rem; font-weight: 700;
-  color: var(--ink); text-decoration: none;
-}
-.nav-logo em { font-style: italic; color: var(--rust); }
-nav ul { display: flex; gap: 32px; list-style: none; }
-nav a {
-  font-family: var(--ff-sans);
+.nav-logo { font-family: var(--ff-head); font-size: 1.05rem; color: var(--ink); }
+.nav-logo em { font-style: italic; color: var(--accent); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
   font-size: 0.78rem; font-weight: 500;
-  text-transform: uppercase; letter-spacing: 0.12em;
-  color: var(--dusty); text-decoration: none;
-  transition: color 0.2s;
+  color: var(--ink-3); letter-spacing: 0.02em;
+  transition: color 0.15s;
 }
-nav a:hover { color: var(--rust); }
+.nav-links a:hover { color: var(--ink); }
 
 /* HERO */
-.hero {
-  max-width: 1200px; margin: 0 auto;
-  padding: clamp(60px,10vw,120px) clamp(24px,5vw,80px) clamp(40px,6vw,80px);
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 60px; align-items: end;
-  position: relative;
+.hero { padding: 72px 0 56px; border-bottom: 1px solid var(--border); }
+.hero-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.72rem; font-weight: 500;
+  color: var(--accent); letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 22px;
 }
-.hero::after {
-  content: '';
-  position: absolute; bottom: 0;
-  left: clamp(24px,5vw,80px); right: clamp(24px,5vw,80px);
-  height: 1px;
-  background: linear-gradient(to right, var(--light), var(--gold) 40%, var(--light));
-}
-.hero-eyebrow {
-  font-family: var(--ff-sans);
-  font-size: 0.75rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.2em;
-  color: var(--rust); margin-bottom: 20px;
-}
-.hero-headline {
+.hero-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--accent); }
+.hero-name {
   font-family: var(--ff-head);
-  font-size: clamp(2.8rem,5.5vw,5rem);
-  font-weight: 900; line-height: 1.0;
-  letter-spacing: -0.03em; margin-bottom: 28px;
+  font-size: clamp(2.4rem,6vw,3.5rem);
+  line-height: 1.05; letter-spacing: -0.02em;
+  margin-bottom: 20px;
 }
-.hero-headline em { font-style: italic; font-weight: 400; color: var(--rust); }
-.hero-sub {
-  font-family: var(--ff-body);
-  font-style: italic; font-size: 1.05rem;
-  color: var(--dusty); max-width: 520px;
-  line-height: 1.8; margin-bottom: 32px;
+.hero-name em { font-style: italic; color: var(--ink-2); }
+.hero-bio {
+  font-size: 1rem; color: var(--ink-2);
+  line-height: 1.78; max-width: 560px;
+  margin-bottom: 20px; font-weight: 300;
 }
-.hero-meta { font-family: var(--ff-sans); font-size: 0.78rem; color: var(--muted); }
-.hero-meta a { color: var(--rust); text-decoration: none; border-bottom: 1px solid currentColor; }
-.hero-aside { padding-bottom: 8px; }
-.date-stamp {
-  font-family: var(--ff-head);
-  font-size: 5rem; font-weight: 900;
-  line-height: 1; color: var(--light);
-  letter-spacing: -0.05em; margin-bottom: 4px;
+.hero-bio strong { color: var(--ink); font-weight: 500; }
+.hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 28px; }
+.hero-tag {
+  font-size: 0.72rem; font-weight: 500;
+  padding: 5px 12px; border-radius: 100px;
+  background: var(--accent-light); color: var(--accent);
 }
-.date-label {
-  font-family: var(--ff-sans); font-size: 0.7rem;
-  text-transform: uppercase; letter-spacing: 0.15em;
-  color: var(--muted); margin-bottom: 20px;
-}
-.currently-box {
-  border: 1px solid var(--light);
-  border-radius: 8px; padding: 18px 20px;
-  background: var(--paper2);
-}
-.currently-title {
-  font-family: var(--ff-sans); font-size: 0.65rem;
-  font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.15em; color: var(--muted); margin-bottom: 12px;
-}
-.currently-item {
-  display: flex; align-items: flex-start; gap: 10px;
-  margin-bottom: 10px; font-size: 0.82rem;
-  color: var(--ink); font-family: var(--ff-sans);
-}
-.currently-item:last-child { margin-bottom: 0; }
-.c-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
-.c-text { line-height: 1.4; }
-.c-text strong { display: block; font-weight: 600; font-size: 0.78rem; }
-.c-text span { color: var(--muted); font-size: 0.72rem; }
 
-/* CONTAINER */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(24px,5vw,80px); }
-.section-head {
-  display: flex; align-items: baseline; justify-content: space-between;
-  padding: clamp(48px,6vw,80px) 0 32px;
-  border-bottom: 2px solid var(--ink);
-  margin-bottom: 40px;
+/* SECTION */
+.section { padding: 52px 0; border-bottom: 1px solid var(--border); }
+.section:last-of-type { border-bottom: none; }
+.section-label {
+  font-size: 0.68rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--ink-3); margin-bottom: 6px;
 }
 .section-title {
   font-family: var(--ff-head);
-  font-size: clamp(1.6rem,3vw,2.4rem);
-  font-weight: 900; letter-spacing: -0.02em;
+  font-size: 1.55rem; letter-spacing: -0.02em;
+  margin-bottom: 6px;
 }
-.section-title em { font-style: italic; color: var(--rust); }
-.section-count {
-  font-family: var(--ff-sans); font-size: 0.72rem;
-  font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.15em; color: var(--muted);
+.section-title em { font-style: italic; color: var(--ink-2); }
+.section-sub {
+  font-size: 0.82rem; color: var(--ink-3);
+  font-weight: 300; margin-bottom: 28px; line-height: 1.6;
 }
 
-/* TRAVELS */
-.travels-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 14px; margin-bottom: 16px;
+/* RESOURCES TABS */
+.resources-tabs {
+  display: flex; gap: 4px;
+  background: var(--surface);
+  padding: 4px; border-radius: 8px;
+  width: fit-content; margin-bottom: 20px;
 }
-.travel-card {
-  border-radius: 6px; overflow: hidden;
-  position: relative; cursor: pointer;
-  background: var(--paper2);
-  border: 1px solid var(--light);
+.tab-btn {
+  font-family: var(--ff-body);
+  font-size: 0.78rem; font-weight: 500;
+  padding: 7px 16px; border-radius: 6px;
+  border: none; background: transparent;
+  color: var(--ink-3); cursor: pointer;
+  transition: all 0.15s;
 }
-.travel-card:first-child { grid-row: span 2; }
-.travel-thumb {
-  width: 100%;
+.tab-btn.active { background: #fff; color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.resource-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 15px 0; border-bottom: 1px solid var(--border);
+  transition: opacity 0.15s; cursor: pointer;
+}
+.resource-item:last-child { border-bottom: none; }
+.resource-item:hover { opacity: 0.65; }
+.r-icon {
+  width: 34px; height: 34px; flex-shrink: 0;
+  border-radius: 7px; background: var(--surface);
+  border: 1px solid var(--border);
   display: flex; align-items: center; justify-content: center;
-  background: linear-gradient(135deg,var(--paper2),var(--light));
-  transition: transform 0.5s cubic-bezier(0.23,1,0.32,1);
-  overflow: hidden;
+  font-size: 0.95rem; margin-top: 2px;
 }
-.travel-card:first-child .travel-thumb { height: 420px; font-size: 5rem; }
-.travel-card:not(:first-child) .travel-thumb { height: 185px; font-size: 2.5rem; }
-.travel-card:hover .travel-thumb { transform: scale(1.04); }
-.travel-info {
-  padding: 12px 16px;
-  display: flex; align-items: center; justify-content: space-between;
+.r-body { flex: 1; }
+.r-title {
+  font-size: 0.88rem; font-weight: 500;
+  color: var(--ink); margin-bottom: 3px; line-height: 1.4;
 }
-.travel-place { font-family: var(--ff-head); font-weight: 700; font-size: 0.9rem; }
-.travel-year { font-family: var(--ff-sans); font-size: 0.7rem; color: var(--muted); }
-.travel-overlay {
-  position: absolute; inset: 0;
-  background: rgba(26,18,8,0.58);
-  display: flex; flex-direction: column;
-  justify-content: flex-end; padding: 20px;
-  opacity: 0; transition: opacity 0.3s;
+.r-meta { font-size: 0.74rem; color: var(--ink-3); font-weight: 300; }
+.r-tag {
+  font-size: 0.62rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.07em;
+  padding: 2px 7px; border-radius: 100px;
+  background: var(--accent-light); color: var(--accent);
+  margin-left: 7px; vertical-align: middle;
 }
-.travel-card:hover .travel-overlay { opacity: 1; }
-.to-place {
-  font-family: var(--ff-head); font-size: 1.2rem;
-  font-weight: 700; font-style: italic; color: #fff;
-}
-.to-note { font-family: var(--ff-sans); font-size: 0.74rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
+.r-tag.orange { background: #FEF3E2; color: #B45309; }
+.r-tag.blue { background: #EFF6FF; color: #1D4ED8; }
+.r-tag.purple { background: #F5F3FF; color: #6D28D9; }
+.r-tag.red { background: #FEF2F2; color: #B91C1C; }
+.r-tag.teal { background: #F0FDFA; color: #0F766E; }
+.r-arrow { font-size: 0.78rem; color: var(--ink-3); margin-top: 4px; flex-shrink: 0; transition: transform 0.15s; }
+.resource-item:hover .r-arrow { transform: translateX(3px); }
 
-/* READS */
-#reads { background: var(--paper2); padding-top: 0; padding-bottom: 0; }
-#reads .container { padding-bottom: clamp(48px,6vw,80px); }
-.reads-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-.reads-col-title {
-  font-family: var(--ff-sans); font-size: 0.7rem;
-  font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.2em; color: var(--rust);
-  margin-bottom: 20px; padding-bottom: 10px;
-  border-bottom: 1px solid var(--light);
+/* EDUCATION */
+.edu-item {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 16px; align-items: center;
+  padding: 18px 0; border-bottom: 1px solid var(--border);
 }
-.book-item {
-  display: flex; gap: 16px;
-  margin-bottom: 20px; padding-bottom: 20px;
-  border-bottom: 1px solid var(--light);
-}
-.book-item:last-child { border-bottom: none; margin-bottom: 0; }
-.book-spine {
-  width: 44px; flex-shrink: 0;
-  border-radius: 3px;
-  display: flex; align-items: center; justify-content: center;
-  writing-mode: vertical-rl;
-  font-family: var(--ff-head);
-  font-size: 0.52rem; font-weight: 700;
-  text-align: center; padding: 8px 4px;
-  letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.85);
-}
-.book-meta { flex: 1; }
-.book-title { font-family: var(--ff-head); font-weight: 700; font-size: 0.95rem; line-height: 1.3; margin-bottom: 3px; }
-.book-author { font-family: var(--ff-sans); font-size: 0.72rem; color: var(--muted); margin-bottom: 5px; }
-.book-note { font-size: 0.8rem; color: var(--dusty); font-style: italic; line-height: 1.5; }
-.stars { color: var(--gold); font-size: 0.72rem; letter-spacing: 1px; margin-bottom: 5px; }
-
-/* MUSINGS */
-.musings-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-.musing-card {
-  border: 1px solid var(--light); border-radius: 8px;
-  padding: 28px 24px; background: var(--paper);
-  position: relative; overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.musing-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,18,8,0.08); }
-.musing-card::before {
-  content: '"';
-  position: absolute; top: -10px; left: 16px;
-  font-family: var(--ff-head); font-size: 6rem;
-  color: var(--light); line-height: 1;
-  font-weight: 900; pointer-events: none;
-}
-.musing-date {
-  font-family: var(--ff-sans); font-size: 0.68rem;
-  font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.15em; color: var(--rust); margin-bottom: 12px;
-}
-.musing-title { font-family: var(--ff-head); font-size: 1.05rem; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
-.musing-excerpt { font-size: 0.84rem; color: var(--dusty); line-height: 1.7; font-style: italic; }
-.musing-read {
-  display: inline-block; margin-top: 16px;
-  font-family: var(--ff-sans); font-size: 0.72rem;
-  font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.1em; color: var(--rust);
-  text-decoration: none; border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
-}
-.musing-read:hover { border-color: var(--rust); }
-
-/* HOBBIES */
-#hobbies { background: var(--paper2); padding-top: 0; padding-bottom: 0; }
-#hobbies .container { padding-bottom: clamp(48px,6vw,80px); }
-.hobbies-bento {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 14px;
-}
-.hobby-tile {
-  border-radius: 10px; padding: 24px 20px;
-  background: var(--paper);
-  border: 1px solid var(--light);
-  display: flex; flex-direction: column; gap: 8px;
-  transition: transform 0.25s;
-}
-.hobby-tile:hover { transform: scale(1.02); }
-.hobby-tile.wide { grid-column: span 2; }
-.h-emoji { font-size: 2rem; }
-.h-name { font-family: var(--ff-head); font-weight: 700; font-size: 1rem; }
-.h-desc { font-family: var(--ff-sans); font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+.edu-item:last-child { border-bottom: none; }
+.edu-name { font-size: 0.92rem; font-weight: 500; margin-bottom: 3px; }
+.edu-inst { font-size: 0.78rem; color: var(--ink-2); font-weight: 400; margin-bottom: 2px; }
+.edu-detail { font-size: 0.74rem; color: var(--ink-3); font-weight: 300; }
 
 /* COURSES */
-#courses { background: var(--paper); padding-top: 0; padding-bottom: 0; }
-#courses .container { padding-bottom: clamp(48px,6vw,80px); }
-.course-row {
-  display: grid; grid-template-columns: 44px 1fr auto;
-  gap: 20px; align-items: center;
-  padding: 20px 0; border-bottom: 1px solid var(--light);
+.course-item {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 16px; align-items: center;
+  padding: 17px 0; border-bottom: 1px solid var(--border);
 }
-.course-row:first-child { border-top: 1px solid var(--light); }
-.c-num {
-  font-family: var(--ff-head); font-style: italic;
-  font-size: 1.5rem; color: var(--light);
-  font-weight: 700; text-align: right;
+.course-item:last-child { border-bottom: none; }
+.c-name { font-size: 0.88rem; font-weight: 500; margin-bottom: 3px; }
+.c-by { font-size: 0.74rem; color: var(--ink-3); font-weight: 300; }
+.c-status {
+  font-size: 0.62rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  padding: 4px 10px; border-radius: 100px; white-space: nowrap;
 }
-.c-name { font-family: var(--ff-head); font-weight: 700; font-size: 1rem; margin-bottom: 3px; }
-.c-by { font-family: var(--ff-sans); font-size: 0.75rem; color: var(--muted); }
-.c-badge {
-  font-family: var(--ff-sans); font-size: 0.65rem;
-  font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.1em; padding: 5px 12px;
-  border-radius: 100px; border: 1px solid; white-space: nowrap;
-}
+.s-done { background: var(--accent-light); color: var(--accent); }
+.s-progress { background: #FEF3E2; color: #B45309; }
+.s-explore { background: #F0F0F0; color: var(--ink-3); }
 
-/* ABOUT */
-#about { background: var(--ink); color: var(--paper); }
-#about .section-head { border-bottom-color: rgba(250,246,239,0.15); }
-#about .section-title { color: var(--paper); }
-#about .section-title em { color: var(--gold); }
-#about .section-count { color: rgba(250,246,239,0.35); }
-.about-inner {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 60px; padding-bottom: clamp(48px,6vw,80px); align-items: start;
+/* CONTACT */
+.contact-bio {
+  font-size: 1rem; color: var(--ink-2);
+  font-weight: 300; line-height: 1.75;
+  margin-bottom: 28px; max-width: 480px;
 }
-.about-text p {
-  font-family: var(--ff-body); font-size: 1rem;
-  line-height: 1.85; color: rgba(250,246,239,0.72); margin-bottom: 18px;
+.contact-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.c-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; font-weight: 500;
+  padding: 10px 20px; border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff; color: var(--ink);
+  transition: border-color 0.15s, background 0.15s;
 }
-.about-text p strong { color: var(--paper); font-weight: 700; }
-.about-aside {
-  padding: 28px;
-  border: 1px solid rgba(250,246,239,0.1);
-  border-radius: 8px;
-  background: rgba(250,246,239,0.04);
-}
-.a-aside-label {
-  font-family: var(--ff-sans); font-size: 0.65rem;
-  font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.2em; color: var(--gold); margin-bottom: 18px;
-}
-.a-detail {
-  display: flex; gap: 12px; align-items: flex-start;
-  margin-bottom: 14px; font-family: var(--ff-sans);
-  font-size: 0.82rem; color: rgba(250,246,239,0.65);
-}
-.a-detail:last-child { margin-bottom: 0; }
-.a-icon { font-size: 1rem; flex-shrink: 0; }
-.a-detail strong { color: var(--paper); display: block; font-weight: 600; font-size: 0.78rem; margin-bottom: 2px; }
+.c-btn:hover { border-color: var(--ink); background: var(--surface); }
+.c-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.c-btn.primary:hover { background: #155c3e; border-color: #155c3e; }
 
 /* FOOTER */
-footer {
-  background: var(--ink);
-  border-top: 1px solid rgba(250,246,239,0.08);
-  padding: 32px clamp(24px,5vw,80px);
-  display: flex; align-items: center; justify-content: space-between;
+footer { border-top: 1px solid var(--border); padding: 26px 0; }
+.footer-inner {
+  max-width: 680px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: center;
 }
-.f-sig { font-family: var(--ff-head); font-style: italic; font-size: 1rem; color: rgba(250,246,239,0.4); }
-.f-sig strong { color: var(--gold); font-style: normal; }
-.f-note { font-family: var(--ff-sans); font-size: 0.72rem; color: rgba(250,246,239,0.3); }
+.f-copy { font-size: 0.74rem; color: var(--ink-3); font-weight: 300; }
 
 /* REVEAL */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.on { opacity: 1; transform: none; }
 
-@media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-aside { display: none; }
-  .travels-grid { grid-template-columns: 1fr 1fr; }
-  .travel-card:first-child { grid-column: span 2; }
-  .reads-cols { grid-template-columns: 1fr; }
-  .musings-grid { grid-template-columns: 1fr; }
-  .hobbies-bento { grid-template-columns: 1fr 1fr; }
-  .about-inner { grid-template-columns: 1fr; }
-  nav ul { display: none; }
-  footer { flex-direction: column; gap: 10px; text-align: center; }
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .hero { padding: 48px 0 40px; }
+  .footer-inner { text-align: center; }
 }
 </style>
 </head>
 <body>
 
-<header>
+<nav>
   <div class="nav-inner">
-    <a href="#" class="nav-logo">Vidhi <em>Agrawal</em></a>
-    <nav><ul>
-      <li><a href="#travels">Travels</a></li>
-      <li><a href="#reads">Books & Films</a></li>
-      <li><a href="#musings">Musings</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
-      <li><a href="#courses">Learning</a></li>
+    <span class="nav-logo">Vidhi <em>Agrawal</em></span>
+    <ul class="nav-links">
       <li><a href="#about">About</a></li>
-    </ul></nav>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </div>
-</header>
+</nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div>
-    <div class="hero-eyebrow">A little corner of the internet</div>
-    <h1 class="hero-headline">Hello, I'm<br>Vidhi. <em>This<br>is my world.</em></h1>
-    <p class="hero-sub">I collect experiences — places I've wandered, books I've loved, films that stayed with me, and thoughts I needed to write down. This site is where I keep it all.</p>
-    <p class="hero-meta">Based in India &nbsp;·&nbsp; Always curious &nbsp;·&nbsp; <a href="#about">A tiny bit about what I do →</a></p>
-  </div>
-  <div class="hero-aside">
-    <div class="date-stamp">2025</div>
-    <div class="date-label">Currently enjoying</div>
-    <div class="currently-box">
-      <div class="currently-title">What I'm into right now</div>
-      <div class="currently-item">
-        <span class="c-icon">📖</span>
-        <div class="c-text"><strong>The Alchemist</strong><span>Paulo Coelho · Re-reading</span></div>
-      </div>
-      <div class="currently-item">
-        <span class="c-icon">🎬</span>
-        <div class="c-text"><strong>All We Imagine as Light</strong><span>Payal Kapadia · Watched</span></div>
-      </div>
-      <div class="currently-item">
-        <span class="c-icon">✈️</span>
-        <div class="c-text"><strong>Planning: Rajasthan</strong><span>Next trip · Winter 2025</span></div>
-      </div>
-      <div class="currently-item">
-        <span class="c-icon">🌱</span>
-        <div class="c-text"><strong>Learning Lightroom</strong><span>For travel photos</span></div>
-      </div>
+<div class="wrap">
+  <div class="hero reveal" id="about">
+    <div class="hero-label">Digital Journey Specialist · IDFC First Bank</div>
+    <h1 class="hero-name">Vidhi Agrawal.<br><em>Product, fintech,<br>& the spaces between.</em></h1>
+    <p class="hero-bio">
+      I'm a digital product manager at <strong>IDFC First Bank</strong>, working on <strong>Account Aggregator ecosystem integration</strong> and digital lending journeys. I sit at the crossroads of regulation, technology, and user experience.
+    </p>
+    <p class="hero-bio">
+      Before this, an MBA from <strong>IIM Kozhikode</strong>, a B.E. in Information Technology from <strong>LD College of Engineering</strong>, and a stint at <strong>Accenture</strong> in application development. Based in India, always curious.
+    </p>
+    <p class="hero-bio">
+      This site is a living record of <strong>things I'm learning, discovering, and finding worth sharing</strong> — not a portfolio, more of a digital garden.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">Account Aggregator</span>
+      <span class="hero-tag">Fintech</span>
+      <span class="hero-tag">Product Strategy</span>
+      <span class="hero-tag">KYC & Compliance</span>
+      <span class="hero-tag">Digital Lending</span>
+      <span class="hero-tag">API Integration</span>
     </div>
   </div>
 </div>
 
-<!-- TRAVELS -->
-<section id="travels">
-<div class="container">
-  <div class="section-head reveal">
-    <h2 class="section-title">Places I've <em>wandered.</em></h2>
-    <span class="section-count">Travel Diary</span>
-  </div>
-  <div class="travels-grid reveal">
-    <div class="travel-card">
-      <div class="travel-thumb" style="height:420px;font-size:5rem;background:linear-gradient(160deg,#e8dfd0,#c9b99a)">🏔️
-        <div class="travel-overlay"><div class="to-place">Spiti Valley</div><div class="to-note">Cold deserts, monasteries & starlit nights</div></div>
-      </div>
-      <div class="travel-info"><span class="travel-place">Spiti Valley, Himachal</span><span class="travel-year">2024</span></div>
-    </div>
-    <div class="travel-card">
-      <div class="travel-thumb" style="background:linear-gradient(135deg,#d4e8c9,#b5d4a0)">🌿
-        <div class="travel-overlay"><div class="to-place">Coorg</div><div class="to-note">Coffee, mist & rain</div></div>
-      </div>
-      <div class="travel-info"><span class="travel-place">Coorg, Karnataka</span><span class="travel-year">2024</span></div>
-    </div>
-    <div class="travel-card">
-      <div class="travel-thumb" style="background:linear-gradient(135deg,#e8d4c9,#d4a090)">🏜️
-        <div class="travel-overlay"><div class="to-place">Rann of Kutch</div><div class="to-note">White salt flats under the moon</div></div>
-      </div>
-      <div class="travel-info"><span class="travel-place">Kutch, Gujarat</span><span class="travel-year">2023</span></div>
-    </div>
-    <div class="travel-card">
-      <div class="travel-thumb" style="background:linear-gradient(135deg,#c9d4e8,#9ab5d4)">🌊
-        <div class="travel-overlay"><div class="to-place">Pondicherry</div><div class="to-note">French quarters & quiet beaches</div></div>
-      </div>
-      <div class="travel-info"><span class="travel-place">Pondicherry</span><span class="travel-year">2023</span></div>
-    </div>
-    <div class="travel-card">
-      <div class="travel-thumb" style="background:linear-gradient(135deg,#e8e4c9,#d4c890)">🕌
-        <div class="travel-overlay"><div class="to-place">Varanasi</div><div class="to-note">Ghats, rituals & river mist</div></div>
-      </div>
-      <div class="travel-info"><span class="travel-place">Varanasi, UP</span><span class="travel-year">2022</span></div>
-    </div>
-    <div class="travel-card">
-      <div class="travel-thumb" style="background:linear-gradient(135deg,#e4c9e8,#c49ac8)">🌸
-        <div class="travel-overlay"><div class="to-place">Valley of Flowers</div><div class="to-note">A meadow full of dreams</div></div>
-      </div>
-      <div class="travel-info"><span class="travel-place">Valley of Flowers</span><span class="travel-year">2022</span></div>
-    </div>
-  </div>
-</div>
-</section>
+<!-- RESOURCES -->
+<div class="wrap">
+  <div class="section reveal" id="resources">
+    <div class="section-label">Curated by me</div>
+    <h2 class="section-title">Things worth <em>your time</em></h2>
+    <p class="section-sub">Articles, videos, and tools I come across and think are worth sharing. From psychology and history to design, environment, and human behaviour — anything I find genuinely interesting ends up here.</p>
 
-<!-- BOOKS & FILMS -->
-<section id="reads">
-<div class="container">
-  <div class="section-head reveal">
-    <h2 class="section-title">Books & <em>Films.</em></h2>
-    <span class="section-count">What I've consumed</span>
-  </div>
-  <div class="reads-cols reveal">
-    <div>
-      <div class="reads-col-title">📚 Recent Reads</div>
-      <div class="book-item">
-        <div class="book-spine" style="background:#8B4513;height:110px">The Kite Runner</div>
-        <div class="book-meta">
-          <div class="book-title">The Kite Runner</div>
-          <div class="book-author">Khaled Hosseini</div>
-          <div class="stars">★★★★★</div>
-          <div class="book-note">A story that breaks and rebuilds you. Hosseini writes with such raw tenderness.</div>
-        </div>
-      </div>
-      <div class="book-item">
-        <div class="book-spine" style="background:#2E5944;height:100px">Atomic Habits</div>
-        <div class="book-meta">
-          <div class="book-title">Atomic Habits</div>
-          <div class="book-author">James Clear</div>
-          <div class="stars">★★★★☆</div>
-          <div class="book-note">Changed how I think about small consistent actions. Deeply practical.</div>
-        </div>
-      </div>
-      <div class="book-item">
-        <div class="book-spine" style="background:#4A3728;height:100px">Sapiens</div>
-        <div class="book-meta">
-          <div class="book-title">Sapiens</div>
-          <div class="book-author">Yuval Noah Harari</div>
-          <div class="stars">★★★★★</div>
-          <div class="book-note">Made me feel both tiny and extraordinary at the same time.</div>
-        </div>
-      </div>
+    <div class="resources-tabs">
+      <button class="tab-btn active" onclick="switchTab(event,'articles')">Articles</button>
+      <button class="tab-btn" onclick="switchTab(event,'videos')">Videos</button>
+      <button class="tab-btn" onclick="switchTab(event,'tools')">Tools</button>
     </div>
-    <div>
-      <div class="reads-col-title">🎬 Films I've Loved</div>
-      <div class="book-item">
-        <div class="book-spine" style="background:#1a1a2e;height:100px;writing-mode:initial;letter-spacing:0;font-size:1.5rem">🎬</div>
-        <div class="book-meta">
-          <div class="book-title">Pather Panchali</div>
-          <div class="book-author">Satyajit Ray · 1955</div>
-          <div class="stars">★★★★★</div>
-          <div class="book-note">Indian cinema's most quietly devastating poem.</div>
-        </div>
-      </div>
-      <div class="book-item">
-        <div class="book-spine" style="background:#2d1b0e;height:100px;writing-mode:initial;letter-spacing:0;font-size:1.5rem">🎬</div>
-        <div class="book-meta">
-          <div class="book-title">All We Imagine as Light</div>
-          <div class="book-author">Payal Kapadia · 2024</div>
-          <div class="stars">★★★★★</div>
-          <div class="book-note">Mumbai through a dreaming, longing lens.</div>
-        </div>
-      </div>
-      <div class="book-item" style="border-bottom:none;margin-bottom:0">
-        <div class="book-spine" style="background:#0d2137;height:100px;writing-mode:initial;letter-spacing:0;font-size:1.5rem">🎬</div>
-        <div class="book-meta">
-          <div class="book-title">Amélie</div>
-          <div class="book-author">Jean-Pierre Jeunet · 2001</div>
-          <div class="stars">★★★★★</div>
-          <div class="book-note">Life-affirming whimsy. Watch it when you need hope.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
 
-<!-- MUSINGS -->
-<section id="musings">
-<div class="container">
-  <div class="section-head reveal">
-    <h2 class="section-title">Musings & <em>Thoughts.</em></h2>
-    <span class="section-count">Things on my mind</span>
-  </div>
-  <div class="musings-grid reveal">
-    <div class="musing-card">
-      <div class="musing-date">March 2025</div>
-      <div class="musing-title">On slowing down in a world that rewards being busy</div>
-      <div class="musing-excerpt">I've been thinking about how we've collectively decided that busyness is a virtue. That if you're not exhausted, you're not doing enough. But I wonder if...</div>
-      <a href="#" class="musing-read">Read more →</a>
+    <!-- ARTICLES -->
+    <div class="tab-content active" id="tab-articles">
+      <a href="#" class="resource-item">
+        <div class="r-icon">📄</div>
+        <div class="r-body">
+          <div class="r-title">India's Account Aggregator Framework: What It Means for Financial Inclusion <span class="r-tag">Fintech</span></div>
+          <div class="r-meta">Sahamati · The clearest primer on how AA works and why it matters</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a href="#" class="resource-item">
+        <div class="r-icon">📄</div>
+        <div class="r-body">
+          <div class="r-title">The Psychology of Everyday Things <span class="r-tag purple">Psychology</span></div>
+          <div class="r-meta">Don Norman · Why the world is designed the way it is — and why it often fails us</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a href="#" class="resource-item">
+        <div class="r-icon">📄</div>
+        <div class="r-body">
+          <div class="r-title">How Civilisations Collapse — And What We Can Learn <span class="r-tag orange">History</span></div>
+          <div class="r-meta">The Atlantic · Patterns across fallen empires that feel uncomfortably relevant today</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a href="#" class="resource-item">
+        <div class="r-icon">📄</div>
+        <div class="r-body">
+          <div class="r-title">Biomimicry: How Nature Solves Design Problems <span class="r-tag teal">Environment</span></div>
+          <div class="r-meta">Smithsonian · What termite mounds, whale fins, and spider silk teach engineers</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a href="#" class="resource-item">
+        <div class="r-icon">📄</div>
+        <div class="r-body">
+          <div class="r-title">The Jobs-to-be-Done Framework <span class="r-tag blue">Product</span></div>
+          <div class="r-meta">Harvard Business Review · Foundational read on why people really choose products</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
     </div>
-    <div class="musing-card">
-      <div class="musing-date">February 2025</div>
-      <div class="musing-title">What Spiti Valley taught me about being small</div>
-      <div class="musing-excerpt">Standing at 4,500 metres, surrounded by nothing but ancient rock and thin air, something shifts in you. The mountains don't care about your to-do list...</div>
-      <a href="#" class="musing-read">Read more →</a>
-    </div>
-    <div class="musing-card">
-      <div class="musing-date">January 2025</div>
-      <div class="musing-title">The quiet magic of re-reading old books</div>
-      <div class="musing-excerpt">I picked up The Alchemist again last week — for maybe the fifth time. And I noticed something I'd never noticed before. The book hadn't changed. I had...</div>
-      <a href="#" class="musing-read">Read more →</a>
-    </div>
-  </div>
-</div>
-</section>
 
-<!-- HOBBIES -->
-<section id="hobbies">
-<div class="container">
-  <div class="section-head reveal">
-    <h2 class="section-title">How I <em>spend</em> my time.</h2>
-    <span class="section-count">Hobbies & Interests</span>
-  </div>
-  <div class="hobbies-bento reveal">
-    <div class="hobby-tile wide" style="background:linear-gradient(135deg,#f0e8d8,#e4d4c0)">
-      <span class="h-emoji">📷</span>
-      <div class="h-name">Photography</div>
-      <div class="h-desc">I shoot travel, portraits, and everyday moments. Always looking for light in unexpected places.</div>
+    <!-- VIDEOS -->
+    <div class="tab-content" id="tab-videos">
+      <a href="#" class="resource-item">
+        <div class="r-icon">▶️</div>
+        <div class="r-body">
+          <div class="r-title">The Surprising Science of Happiness <span class="r-tag purple">Psychology</span></div>
+          <div class="r-meta">TED · Dan Gilbert · One of the most watched TED talks for a reason</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a href="#" class="resource-item">
+        <div class="r-icon">▶️</div>
+        <div class="r-body">
+          <div class="r-title">How India Stack is Reshaping Financial Services <span class="r-tag">Fintech</span></div>
+          <div class="r-meta">iSPIRT Foundation · A must-watch to understand the big picture</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a href="#" class="resource-item">
+        <div class="r-icon">▶️</div>
+        <div class="r-body">
+          <div class="r-title">The Power of Thinking in Systems <span class="r-tag teal">Environment</span></div>
+          <div class="r-meta">TED · Donella Meadows · Changed how I approach complex problems</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a href="#" class="resource-item">
+        <div class="r-icon">▶️</div>
+        <div class="r-body">
+          <div class="r-title">Abstract: The Art of Design <span class="r-tag red">Design</span></div>
+          <div class="r-meta">Netflix Documentary · Inside the minds of the world's most interesting designers</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a href="#" class="resource-item">
+        <div class="r-icon">▶️</div>
+        <div class="r-body">
+          <div class="r-title">Guns, Germs and Steel — The Story of Everyone for the Last 13,000 Years <span class="r-tag orange">History</span></div>
+          <div class="r-meta">National Geographic · Based on Jared Diamond's Pulitzer-winning book</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
     </div>
-    <div class="hobby-tile" style="background:linear-gradient(135deg,#dde8d8,#c9ddc0)">
-      <span class="h-emoji">✈️</span>
-      <div class="h-name">Travelling</div>
-      <div class="h-desc">Especially the offbeat, slow kind.</div>
-    </div>
-    <div class="hobby-tile" style="background:linear-gradient(135deg,#d8dfe8,#c0cedd)">
-      <span class="h-emoji">📚</span>
-      <div class="h-name">Reading</div>
-      <div class="h-desc">Fiction, non-fiction, philosophy — all of it.</div>
-    </div>
-    <div class="hobby-tile" style="background:linear-gradient(135deg,#e8d8d8,#ddc0c0)">
-      <span class="h-emoji">🍳</span>
-      <div class="h-name">Cooking</div>
-      <div class="h-desc">Experimenting with regional Indian cuisines.</div>
-    </div>
-    <div class="hobby-tile" style="background:linear-gradient(135deg,#e8e4d8,#ddd8c0)">
-      <span class="h-emoji">🎵</span>
-      <div class="h-name">Music</div>
-      <div class="h-desc">Indie, folk, classical — whatever the mood calls for.</div>
-    </div>
-    <div class="hobby-tile wide" style="background:linear-gradient(135deg,#e4d8e8,#d4c0dd)">
-      <span class="h-emoji">✍️</span>
-      <div class="h-name">Journaling & Writing</div>
-      <div class="h-desc">Putting words to things I'm still figuring out. This site is basically my public journal.</div>
-    </div>
-    <div class="hobby-tile" style="background:linear-gradient(135deg,#d8e8e4,#c0ddd8)">
-      <span class="h-emoji">🌱</span>
-      <div class="h-name">Plants</div>
-      <div class="h-desc">Slowly building a little indoor jungle.</div>
-    </div>
-    <div class="hobby-tile" style="background:linear-gradient(135deg,#e8e0d4,#d4c8b0)">
-      <span class="h-emoji">🎬</span>
-      <div class="h-name">Cinema</div>
-      <div class="h-desc">World cinema, indie films, the quiet ones.</div>
+
+    <!-- TOOLS -->
+    <div class="tab-content" id="tab-tools">
+      <a href="https://miro.com" target="_blank" class="resource-item">
+        <div class="r-icon">🛠️</div>
+        <div class="r-body">
+          <div class="r-title">Miro <span class="r-tag blue">Product</span></div>
+          <div class="r-meta">My go-to for journey mapping, stakeholder workshops, and visual thinking</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a href="https://www.notion.so" target="_blank" class="resource-item">
+        <div class="r-icon">🛠️</div>
+        <div class="r-body">
+          <div class="r-title">Notion <span class="r-tag blue">Productivity</span></div>
+          <div class="r-meta">Where I organise everything — research notes, PRDs, strategy docs, reading lists</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a href="https://www.hotjar.com" target="_blank" class="resource-item">
+        <div class="r-icon">🛠️</div>
+        <div class="r-body">
+          <div class="r-title">Hotjar <span class="r-tag orange">Analytics</span></div>
+          <div class="r-meta">Heatmaps and session recordings — see exactly what real users do on a page</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
+      <a href="https://squoosh.app" target="_blank" class="resource-item">
+        <div class="r-icon">🛠️</div>
+        <div class="r-body">
+          <div class="r-title">Squoosh <span class="r-tag purple">Utility</span></div>
+          <div class="r-meta">Google's free image compressor. Dramatically cuts file sizes with no visible quality loss</div>
+        </div>
+        <div class="r-arrow">→</div>
+      </a>
     </div>
   </div>
 </div>
-</section>
+
+<!-- EDUCATION -->
+<div class="wrap">
+  <div class="section reveal" id="education">
+    <div class="section-label">Education</div>
+    <h2 class="section-title">Where I <em>studied</em></h2>
+
+    <div class="edu-item">
+      <div>
+        <div class="edu-name">MBA — Finance, Strategy & Operations</div>
+        <div class="edu-inst">Indian Institute of Management, Kozhikode</div>
+        <div class="edu-detail">2020 – 2022</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-name">B.E. — Information Technology</div>
+        <div class="edu-inst">LD College of Engineering, GTU</div>
+        <div class="edu-detail">2014 – 2018</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- COURSES -->
-<section id="courses">
-<div class="container">
-  <div class="section-head reveal">
-    <h2 class="section-title">Things I'm <em>learning.</em></h2>
-    <span class="section-count">Courses & enrichment</span>
-  </div>
-  <div class="reveal">
-    <div class="course-row">
-      <div class="c-num">01</div>
-      <div><div class="c-name">Photography & Lightroom Editing</div><div class="c-by">Udemy · Peter McKinnon</div></div>
-      <span class="c-badge" style="color:var(--rust);border-color:var(--rust)">In progress</span>
-    </div>
-    <div class="course-row">
-      <div class="c-num">02</div>
-      <div><div class="c-name">The Science of Well-Being</div><div class="c-by">Coursera · Yale University</div></div>
-      <span class="c-badge" style="color:var(--sage);border-color:var(--sage)">Completed</span>
-    </div>
-    <div class="course-row">
-      <div class="c-num">03</div>
-      <div><div class="c-name">Creative Writing: The Craft of Setting and Voice</div><div class="c-by">Coursera · Wesleyan University</div></div>
-      <span class="c-badge" style="color:var(--sage);border-color:var(--sage)">Completed</span>
-    </div>
-    <div class="course-row">
-      <div class="c-num">04</div>
-      <div><div class="c-name">Human-Centred Design</div><div class="c-by">IDEO · Design Thinking</div></div>
-      <span class="c-badge" style="color:var(--sage);border-color:var(--sage)">Completed</span>
-    </div>
-    <div class="course-row">
-      <div class="c-num">05</div>
-      <div><div class="c-name">Beginner Hindi Poetry</div><div class="c-by">Independent study</div></div>
-      <span class="c-badge" style="color:var(--gold);border-color:var(--gold)">Exploring</span>
-    </div>
-  </div>
-</div>
-</section>
+<div class="wrap">
+  <div class="section reveal" id="courses">
+    <div class="section-label">Learning log</div>
+    <h2 class="section-title">Courses I've <em>taken</em></h2>
+    <p class="section-sub">A running log of structured learning outside of formal education — professional, creative, and everything in between.</p>
 
-<!-- ABOUT (tiny, at the bottom) -->
-<section id="about">
-<div class="container">
-  <div class="section-head reveal">
-    <h2 class="section-title">Oh, and <em>what I do.</em></h2>
-    <span class="section-count">The work bit</span>
-  </div>
-  <div class="about-inner reveal">
-    <div class="about-text">
-      <p>If you've scrolled all the way here — hello! I'm <strong>Vidhi Agrawal</strong>, and I promise this tiny section won't take long.</p>
-      <p>Professionally, I work as a <strong>Digital Journey Specialist</strong> — which means I think deeply about how people move through digital experiences, and how to make those journeys feel more intuitive and human.</p>
-      <p>But honestly? That's just the day job. Everything above this section is the real me. The one who gets genuinely excited about a good bookshop, a mountain road, or the perfect frame.</p>
-      <p>If you want to talk about any of the above — the travels, the books, the films, the writing — I'm easy to reach.</p>
+    <div class="course-item">
+      <div><div class="c-name">Photography & Lightroom Editing</div><div class="c-by">Udemy · Peter McKinnon</div></div>
+      <span class="c-status s-progress">In progress</span>
     </div>
-    <div class="about-aside">
-      <div class="a-aside-label">Quick details</div>
-      <div class="a-detail"><span class="a-icon">📍</span><div><strong>Based in</strong>Ahmedabad, Gujarat, India</div></div>
-      <div class="a-detail"><span class="a-icon">💼</span><div><strong>What I do</strong>Digital Journey Specialist</div></div>
-      <div class="a-detail"><span class="a-icon">✉️</span><div><strong>Say hello</strong>hello@vidhiagrawal.in</div></div>
-      <div class="a-detail"><span class="a-icon">🌐</span><div><strong>This site</strong>vidhiagrawal.in<br><span style="font-size:0.7rem;color:rgba(250,246,239,0.4)">A personal space, not a portfolio</span></div></div>
+    <div class="course-item">
+      <div><div class="c-name">The Science of Well-Being</div><div class="c-by">Coursera · Yale University</div></div>
+      <span class="c-status s-done">Completed</span>
+    </div>
+    <div class="course-item">
+      <div><div class="c-name">Creative Writing: The Craft of Setting and Voice</div><div class="c-by">Coursera · Wesleyan University</div></div>
+      <span class="c-status s-done">Completed</span>
+    </div>
+    <div class="course-item">
+      <div><div class="c-name">Human-Centred Design</div><div class="c-by">IDEO · Design Thinking</div></div>
+      <span class="c-status s-done">Completed</span>
+    </div>
+    <div class="course-item">
+      <div><div class="c-name">Beginner Hindi Poetry</div><div class="c-by">Independent study</div></div>
+      <span class="c-status s-explore">Exploring</span>
     </div>
   </div>
 </div>
-</section>
+
+<!-- CONTACT -->
+<div class="wrap">
+  <div class="section reveal" id="contact">
+    <div class="section-label">Say hello</div>
+    <h2 class="section-title">Get in <em>touch</em></h2>
+    <p class="contact-bio">If you want to talk about fintech, product, or digital journeys — or if you share an interest in psychology, history, human behaviour, health, biology, design, or really anything that shapes how the world works — I'm easy to reach. Always happy to connect.</p>
+    <div class="contact-links">
+      <a href="mailto:vidhia24@iimklive.com" class="c-btn primary">✉️ vidhia24@iimklive.com</a>
+      <a href="https://linkedin.com/in/vidhimagrawal" target="_blank" class="c-btn">💼 LinkedIn</a>
+    </div>
+  </div>
+</div>
 
 <footer>
-  <div class="f-sig">Made with curiosity by <strong>Vidhi Agrawal</strong></div>
-  <div class="f-note">vidhiagrawal.in · A life, documented.</div>
+  <div class="footer-inner">
+    <span class="f-copy">© 2025 Vidhi Agrawal · vidhiagrawal.in</span>
+  </div>
 </footer>
 
 <script>
-  const els = document.querySelectorAll('.reveal');
+  function switchTab(e, tab) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    e.target.classList.add('active');
+  }
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
   }, { threshold: 0.08 });
-  els.forEach(el => obs.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
