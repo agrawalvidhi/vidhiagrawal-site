@@ -4,17 +4,42 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Vidhi Agrawal · Site Admin</title>
-    <script src="https://cdn.jsdelivr.net/npm/tinacms@latest/dist/legacy-scripts/cms.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: sans-serif; background: #f5f5f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+      .card {
+        background: #fff; border-radius: 12px;
+        padding: 48px 40px; max-width: 440px; width: 100%;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        text-align: center;
+      }
+      .logo { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+      .logo em { font-style: italic; color: #1A6B4A; }
+      .sub { font-size: 0.85rem; color: #888; margin-bottom: 32px; }
+      .btn {
+        display: inline-block;
+        background: #1A6B4A; color: #fff;
+        padding: 12px 28px; border-radius: 8px;
+        font-size: 0.9rem; font-weight: 600;
+        text-decoration: none; margin-bottom: 16px;
+        transition: background 0.15s;
+      }
+      .btn:hover { background: #155c3e; }
+      .hint { font-size: 0.78rem; color: #aaa; margin-top: 24px; line-height: 1.6; }
+      .hint a { color: #1A6B4A; }
+    </style>
   </head>
   <body>
-    <script>
-      const { TinaCMS } = window;
-      const cms = new TinaCMS({
-        clientId: "0524ef42-cc73-4396-a012-07647f6de215",
-        token: "2e46a94c08986f81889e294af88a1ba05aa07048",
-        branch: "main",
-      });
-      cms.render();
-    </script>
+    <div class="card">
+      <div class="logo">Vidhi <em>Agrawal</em></div>
+      <div class="sub">Site content manager</div>
+      <a href="https://app.tina.io/projects/0524ef42-cc73-4396-a012-07647f6de215" target="_blank" class="btn">
+        Open Tina CMS Dashboard →
+      </a>
+      <div class="hint">
+        This will open your Tina CMS dashboard where you can add and edit resources, courses, and more.<br><br>
+        <a href="/">← Back to site</a>
+      </div>
+    </div>
   </body>
 </html>
