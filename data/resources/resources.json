@@ -1,0 +1,132 @@
+[
+  {
+    "title": "India's Account Aggregator Framework: What It Means for Financial Inclusion",
+    "category": "articles",
+    "tag": "Fintech",
+    "tagColor": "green",
+    "source": "Sahamati",
+    "note": "The clearest primer on how AA works and why it matters",
+    "url": "https://sahamati.org.in",
+    "icon": "📄"
+  },
+  {
+    "title": "The Psychology of Everyday Things",
+    "category": "articles",
+    "tag": "Psychology",
+    "tagColor": "purple",
+    "source": "Don Norman",
+    "note": "Why the world is designed the way it is — and why it often fails us",
+    "url": "#",
+    "icon": "📄"
+  },
+  {
+    "title": "How Civilisations Collapse — And What We Can Learn",
+    "category": "articles",
+    "tag": "History",
+    "tagColor": "orange",
+    "source": "The Atlantic",
+    "note": "Patterns across fallen empires that feel uncomfortably relevant today",
+    "url": "#",
+    "icon": "📄"
+  },
+  {
+    "title": "Biomimicry: How Nature Solves Design Problems",
+    "category": "articles",
+    "tag": "Environment",
+    "tagColor": "teal",
+    "source": "Smithsonian",
+    "note": "What termite mounds, whale fins, and spider silk teach engineers",
+    "url": "#",
+    "icon": "📄"
+  },
+  {
+    "title": "The Jobs-to-be-Done Framework",
+    "category": "articles",
+    "tag": "Product",
+    "tagColor": "blue",
+    "source": "Harvard Business Review",
+    "note": "Foundational read on why people really choose products",
+    "url": "#",
+    "icon": "📄"
+  },
+  {
+    "title": "The Surprising Science of Happiness",
+    "category": "videos",
+    "tag": "Psychology",
+    "tagColor": "purple",
+    "source": "TED · Dan Gilbert",
+    "note": "One of the most watched TED talks for a reason",
+    "url": "#",
+    "icon": "▶️"
+  },
+  {
+    "title": "How India Stack is Reshaping Financial Services",
+    "category": "videos",
+    "tag": "Fintech",
+    "tagColor": "green",
+    "source": "iSPIRT Foundation",
+    "note": "A must-watch to understand the big picture",
+    "url": "#",
+    "icon": "▶️"
+  },
+  {
+    "title": "The Power of Thinking in Systems",
+    "category": "videos",
+    "tag": "Environment",
+    "tagColor": "teal",
+    "source": "TED · Donella Meadows",
+    "note": "Changed how I approach complex problems",
+    "url": "#",
+    "icon": "▶️"
+  },
+  {
+    "title": "Abstract: The Art of Design",
+    "category": "videos",
+    "tag": "Design",
+    "tagColor": "red",
+    "source": "Netflix Documentary",
+    "note": "Inside the minds of the world's most interesting designers",
+    "url": "#",
+    "icon": "▶️"
+  },
+  {
+    "title": "Miro",
+    "category": "tools",
+    "tag": "Product",
+    "tagColor": "blue",
+    "source": "miro.com",
+    "note": "My go-to for journey mapping, stakeholder workshops, and visual thinking",
+    "url": "https://miro.com",
+    "icon": "🛠️"
+  },
+  {
+    "title": "Notion",
+    "category": "tools",
+    "tag": "Productivity",
+    "tagColor": "blue",
+    "source": "notion.so",
+    "note": "Where I organise everything — research notes, PRDs, strategy docs, reading lists",
+    "url": "https://www.notion.so",
+    "icon": "🛠️"
+  },
+  {
+    "title": "Hotjar",
+    "category": "tools",
+    "tag": "Analytics",
+    "tagColor": "orange",
+    "source": "hotjar.com",
+    "note": "Heatmaps and session recordings — see exactly what real users do on a page",
+    "url": "https://www.hotjar.com",
+    "icon": "🛠️"
+  },
+  {
+    "title": "Squoosh",
+    "category": "tools",
+    "tag": "Utility",
+    "tagColor": "purple",
+    "source": "squoosh.app",
+    "note": "Google's free image compressor. Dramatically cuts file sizes with no visible quality loss",
+    "url": "https://squoosh.app",
+    "icon": "🛠️"
+  }
+]
