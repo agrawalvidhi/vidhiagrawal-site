@@ -123,7 +123,7 @@ nav {
 .resource-item {
   display: flex; gap: 14px; align-items: flex-start;
   padding: 15px 0; border-bottom: 1px solid var(--border);
-  transition: opacity 0.15s; cursor: pointer;
+  transition: opacity 0.15s;
 }
 .resource-item:last-child { border-bottom: none; }
 .resource-item:hover { opacity: 0.65; }
@@ -135,10 +135,7 @@ nav {
   font-size: 0.95rem; margin-top: 2px;
 }
 .r-body { flex: 1; }
-.r-title {
-  font-size: 0.88rem; font-weight: 500;
-  color: var(--ink); margin-bottom: 3px; line-height: 1.4;
-}
+.r-title { font-size: 0.88rem; font-weight: 500; color: var(--ink); margin-bottom: 3px; line-height: 1.4; }
 .r-meta { font-size: 0.74rem; color: var(--ink-3); font-weight: 300; }
 .r-tag {
   font-size: 0.62rem; font-weight: 600;
@@ -184,6 +181,12 @@ nav {
 .s-progress { background: #FEF3E2; color: #B45309; }
 .s-explore { background: #F0F0F0; color: var(--ink-3); }
 
+/* LOADING */
+.loading {
+  font-size: 0.82rem; color: var(--ink-3);
+  font-style: italic; padding: 20px 0;
+}
+
 /* CONTACT */
 .contact-bio {
   font-size: 1rem; color: var(--ink-2);
@@ -207,9 +210,11 @@ nav {
 footer { border-top: 1px solid var(--border); padding: 26px 0; }
 .footer-inner {
   max-width: 680px; margin: 0 auto; padding: 0 24px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: space-between;
 }
 .f-copy { font-size: 0.74rem; color: var(--ink-3); font-weight: 300; }
+.f-admin a { font-size: 0.74rem; color: var(--ink-3); font-weight: 300; transition: color 0.15s; }
+.f-admin a:hover { color: var(--accent); }
 
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -218,7 +223,7 @@ footer { border-top: 1px solid var(--border); padding: 26px 0; }
 @media (max-width: 600px) {
   .nav-links { display: none; }
   .hero { padding: 48px 0 40px; }
-  .footer-inner { text-align: center; }
+  .footer-inner { flex-direction: column; gap: 8px; text-align: center; }
 }
 </style>
 </head>
@@ -243,7 +248,7 @@ footer { border-top: 1px solid var(--border); padding: 26px 0; }
     <div class="hero-label">Digital Journey Specialist · IDFC First Bank</div>
     <h1 class="hero-name">Vidhi Agrawal.<br><em>Product, fintech,<br>& the spaces between.</em></h1>
     <p class="hero-bio">
-      I'm a digital product manager at <strong>IDFC First Bank</strong>, working on <strong>Account Aggregator ecosystem integration</strong> and digital lending journeys. I sit at the crossroads of regulation, technology, and user experience.
+      I'm a digital journey specialist at <strong>IDFC First Bank</strong>, working on <strong>Account Aggregator ecosystem integration</strong> and digital lending journeys. I sit at the crossroads of regulation, technology, and user experience.
     </p>
     <p class="hero-bio">
       Before this, an MBA from <strong>IIM Kozhikode</strong>, a B.E. in Information Technology from <strong>LD College of Engineering</strong>, and a stint at <strong>Accenture</strong> in application development. Based in India, always curious.
@@ -275,128 +280,14 @@ footer { border-top: 1px solid var(--border); padding: 26px 0; }
       <button class="tab-btn" onclick="switchTab(event,'tools')">Tools</button>
     </div>
 
-    <!-- ARTICLES -->
     <div class="tab-content active" id="tab-articles">
-      <a href="#" class="resource-item">
-        <div class="r-icon">📄</div>
-        <div class="r-body">
-          <div class="r-title">India's Account Aggregator Framework: What It Means for Financial Inclusion <span class="r-tag">Fintech</span></div>
-          <div class="r-meta">Sahamati · The clearest primer on how AA works and why it matters</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
-      <a href="#" class="resource-item">
-        <div class="r-icon">📄</div>
-        <div class="r-body">
-          <div class="r-title">The Psychology of Everyday Things <span class="r-tag purple">Psychology</span></div>
-          <div class="r-meta">Don Norman · Why the world is designed the way it is — and why it often fails us</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
-      <a href="#" class="resource-item">
-        <div class="r-icon">📄</div>
-        <div class="r-body">
-          <div class="r-title">How Civilisations Collapse — And What We Can Learn <span class="r-tag orange">History</span></div>
-          <div class="r-meta">The Atlantic · Patterns across fallen empires that feel uncomfortably relevant today</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
-      <a href="#" class="resource-item">
-        <div class="r-icon">📄</div>
-        <div class="r-body">
-          <div class="r-title">Biomimicry: How Nature Solves Design Problems <span class="r-tag teal">Environment</span></div>
-          <div class="r-meta">Smithsonian · What termite mounds, whale fins, and spider silk teach engineers</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
-      <a href="#" class="resource-item">
-        <div class="r-icon">📄</div>
-        <div class="r-body">
-          <div class="r-title">The Jobs-to-be-Done Framework <span class="r-tag blue">Product</span></div>
-          <div class="r-meta">Harvard Business Review · Foundational read on why people really choose products</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
+      <div class="loading">Loading...</div>
     </div>
-
-    <!-- VIDEOS -->
     <div class="tab-content" id="tab-videos">
-      <a href="#" class="resource-item">
-        <div class="r-icon">▶️</div>
-        <div class="r-body">
-          <div class="r-title">The Surprising Science of Happiness <span class="r-tag purple">Psychology</span></div>
-          <div class="r-meta">TED · Dan Gilbert · One of the most watched TED talks for a reason</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
-      <a href="#" class="resource-item">
-        <div class="r-icon">▶️</div>
-        <div class="r-body">
-          <div class="r-title">How India Stack is Reshaping Financial Services <span class="r-tag">Fintech</span></div>
-          <div class="r-meta">iSPIRT Foundation · A must-watch to understand the big picture</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
-      <a href="#" class="resource-item">
-        <div class="r-icon">▶️</div>
-        <div class="r-body">
-          <div class="r-title">The Power of Thinking in Systems <span class="r-tag teal">Environment</span></div>
-          <div class="r-meta">TED · Donella Meadows · Changed how I approach complex problems</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
-      <a href="#" class="resource-item">
-        <div class="r-icon">▶️</div>
-        <div class="r-body">
-          <div class="r-title">Abstract: The Art of Design <span class="r-tag red">Design</span></div>
-          <div class="r-meta">Netflix Documentary · Inside the minds of the world's most interesting designers</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
-      <a href="#" class="resource-item">
-        <div class="r-icon">▶️</div>
-        <div class="r-body">
-          <div class="r-title">Guns, Germs and Steel — The Story of Everyone for the Last 13,000 Years <span class="r-tag orange">History</span></div>
-          <div class="r-meta">National Geographic · Based on Jared Diamond's Pulitzer-winning book</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
+      <div class="loading">Loading...</div>
     </div>
-
-    <!-- TOOLS -->
     <div class="tab-content" id="tab-tools">
-      <a href="https://miro.com" target="_blank" class="resource-item">
-        <div class="r-icon">🛠️</div>
-        <div class="r-body">
-          <div class="r-title">Miro <span class="r-tag blue">Product</span></div>
-          <div class="r-meta">My go-to for journey mapping, stakeholder workshops, and visual thinking</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
-      <a href="https://www.notion.so" target="_blank" class="resource-item">
-        <div class="r-icon">🛠️</div>
-        <div class="r-body">
-          <div class="r-title">Notion <span class="r-tag blue">Productivity</span></div>
-          <div class="r-meta">Where I organise everything — research notes, PRDs, strategy docs, reading lists</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
-      <a href="https://www.hotjar.com" target="_blank" class="resource-item">
-        <div class="r-icon">🛠️</div>
-        <div class="r-body">
-          <div class="r-title">Hotjar <span class="r-tag orange">Analytics</span></div>
-          <div class="r-meta">Heatmaps and session recordings — see exactly what real users do on a page</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
-      <a href="https://squoosh.app" target="_blank" class="resource-item">
-        <div class="r-icon">🛠️</div>
-        <div class="r-body">
-          <div class="r-title">Squoosh <span class="r-tag purple">Utility</span></div>
-          <div class="r-meta">Google's free image compressor. Dramatically cuts file sizes with no visible quality loss</div>
-        </div>
-        <div class="r-arrow">→</div>
-      </a>
+      <div class="loading">Loading...</div>
     </div>
   </div>
 </div>
@@ -406,7 +297,6 @@ footer { border-top: 1px solid var(--border); padding: 26px 0; }
   <div class="section reveal" id="education">
     <div class="section-label">Education</div>
     <h2 class="section-title">Where I <em>studied</em></h2>
-
     <div class="edu-item">
       <div>
         <div class="edu-name">MBA — Finance, Strategy & Operations</div>
@@ -430,27 +320,7 @@ footer { border-top: 1px solid var(--border); padding: 26px 0; }
     <div class="section-label">Learning log</div>
     <h2 class="section-title">Courses I've <em>taken</em></h2>
     <p class="section-sub">A running log of structured learning outside of formal education — professional, creative, and everything in between.</p>
-
-    <div class="course-item">
-      <div><div class="c-name">Photography & Lightroom Editing</div><div class="c-by">Udemy · Peter McKinnon</div></div>
-      <span class="c-status s-progress">In progress</span>
-    </div>
-    <div class="course-item">
-      <div><div class="c-name">The Science of Well-Being</div><div class="c-by">Coursera · Yale University</div></div>
-      <span class="c-status s-done">Completed</span>
-    </div>
-    <div class="course-item">
-      <div><div class="c-name">Creative Writing: The Craft of Setting and Voice</div><div class="c-by">Coursera · Wesleyan University</div></div>
-      <span class="c-status s-done">Completed</span>
-    </div>
-    <div class="course-item">
-      <div><div class="c-name">Human-Centred Design</div><div class="c-by">IDEO · Design Thinking</div></div>
-      <span class="c-status s-done">Completed</span>
-    </div>
-    <div class="course-item">
-      <div><div class="c-name">Beginner Hindi Poetry</div><div class="c-by">Independent study</div></div>
-      <span class="c-status s-explore">Exploring</span>
-    </div>
+    <div id="courses-list"><div class="loading">Loading...</div></div>
   </div>
 </div>
 
@@ -470,20 +340,84 @@ footer { border-top: 1px solid var(--border); padding: 26px 0; }
 <footer>
   <div class="footer-inner">
     <span class="f-copy">© 2025 Vidhi Agrawal · vidhiagrawal.in</span>
+    <span class="f-admin"><a href="/admin">Update site →</a></span>
   </div>
 </footer>
 
 <script>
+  // Tab switching
   function switchTab(e, tab) {
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
     document.getElementById('tab-' + tab).classList.add('active');
     e.target.classList.add('active');
   }
+
+  // Tag color helper
+  function tagClass(color) {
+    const map = { green: '', orange: 'orange', blue: 'blue', purple: 'purple', red: 'red', teal: 'teal' };
+    return map[color] || '';
+  }
+
+  // Render a resource item
+  function renderResource(r) {
+    return `<a href="${r.url || '#'}" target="_blank" class="resource-item">
+      <div class="r-icon">${r.icon || '📄'}</div>
+      <div class="r-body">
+        <div class="r-title">${r.title}<span class="r-tag ${tagClass(r.tagColor)}">${r.tag}</span></div>
+        <div class="r-meta">${r.source ? r.source + ' · ' : ''}${r.note || ''}</div>
+      </div>
+      <div class="r-arrow">→</div>
+    </a>`;
+  }
+
+  // Render a course item
+  function renderCourse(c) {
+    const statusClass = c.status === 'Completed' ? 's-done' : c.status === 'In progress' ? 's-progress' : 's-explore';
+    return `<div class="course-item">
+      <div><div class="c-name">${c.name}</div><div class="c-by">${c.by || ''}</div></div>
+      <span class="c-status ${statusClass}">${c.status}</span>
+    </div>`;
+  }
+
+  // Load resources from JSON
+  async function loadResources() {
+    try {
+      const res = await fetch('/data/resources/resources.json');
+      const data = await res.json();
+      const articles = data.filter(r => r.category === 'articles');
+      const videos = data.filter(r => r.category === 'videos');
+      const tools = data.filter(r => r.category === 'tools');
+      document.getElementById('tab-articles').innerHTML = articles.map(renderResource).join('') || '<p class="loading">Nothing here yet.</p>';
+      document.getElementById('tab-videos').innerHTML = videos.map(renderResource).join('') || '<p class="loading">Nothing here yet.</p>';
+      document.getElementById('tab-tools').innerHTML = tools.map(renderResource).join('') || '<p class="loading">Nothing here yet.</p>';
+    } catch(e) {
+      ['tab-articles','tab-videos','tab-tools'].forEach(id => {
+        document.getElementById(id).innerHTML = '<p class="loading">Could not load resources.</p>';
+      });
+    }
+  }
+
+  // Load courses from JSON
+  async function loadCourses() {
+    try {
+      const res = await fetch('/data/courses/courses.json');
+      const data = await res.json();
+      document.getElementById('courses-list').innerHTML = data.map(renderCourse).join('');
+    } catch(e) {
+      document.getElementById('courses-list').innerHTML = '<p class="loading">Could not load courses.</p>';
+    }
+  }
+
+  // Scroll reveal
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Init
+  loadResources();
+  loadCourses();
 </script>
 </body>
 </html>
