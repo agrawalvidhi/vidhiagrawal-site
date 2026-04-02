@@ -6,7 +6,8 @@
   <title>Vidhi Agrawal · Content Manager</title>
 </head>
 <body>
-  <script src="https://unpkg.com/netlify-cms@^2.10.192/dist/netlify-cms.js"></script>
+  <div id="nc-root"></div>
+  <script src="https://unpkg.com/decap-cms@3.0.12/dist/decap-cms.js"></script>
   <script>
     CMS.init({
       config: {
@@ -15,8 +16,7 @@
           repo: 'agrawalvidhi/vidhiagrawal-site',
           branch: 'main',
           auth_type: 'pkce',
-          app_id: 'Ov23li4IHdfgtjLapvi5',
-          base_url: 'https://vidhiagrawal-site.pages.dev'
+          app_id: 'Ov23li4IHdfgtjLapvi5'
         },
         media_folder: 'images/uploads',
         public_folder: '/images/uploads',
