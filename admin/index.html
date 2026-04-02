@@ -4,9 +4,76 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vidhi Agrawal · Content Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'agrawalvidhi/vidhiagrawal-site',
+          branch: 'main',
+          auth_type: 'pkce',
+          app_id: 'Ov23li4IHdfgtjLapvi5'
+        },
+        media_folder: 'images/uploads',
+        public_folder: '/images/uploads',
+        collections: [
+          {
+            name: 'resources',
+            label: 'Resources',
+            files: [
+              {
+                name: 'resources',
+                label: 'All Resources',
+                file: '_data/resources.yml',
+                fields: [
+                  {
+                    name: 'items',
+                    label: 'Resources',
+                    widget: 'list',
+                    fields: [
+                      { label: 'Title', name: 'title', widget: 'string' },
+                      { label: 'Category', name: 'category', widget: 'select', options: ['articles', 'videos', 'tools'] },
+                      { label: 'Tag', name: 'tag', widget: 'string' },
+                      { label: 'Tag Colour', name: 'tagColor', widget: 'select', options: ['green', 'orange', 'blue', 'purple', 'red', 'teal'] },
+                      { label: 'Source', name: 'source', widget: 'string', required: false },
+                      { label: 'Your note', name: 'note', widget: 'string' },
+                      { label: 'URL', name: 'url', widget: 'string' },
+                      { label: 'Icon', name: 'icon', widget: 'select', options: ['📄', '▶️', '🛠️'] }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: 'courses',
+            label: 'Courses',
+            files: [
+              {
+                name: 'courses',
+                label: 'All Courses',
+                file: '_data/courses.yml',
+                fields: [
+                  {
+                    name: 'items',
+                    label: 'Courses',
+                    widget: 'list',
+                    fields: [
+                      { label: 'Course Name', name: 'name', widget: 'string' },
+                      { label: 'Platform / Instructor', name: 'by', widget: 'string' },
+                      { label: 'Status', name: 'status', widget: 'select', options: ['Completed', 'In progress', 'Exploring'] }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
