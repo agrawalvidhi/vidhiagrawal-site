@@ -2,8 +2,6 @@ backend:
   name: github
   repo: agrawalvidhi/vidhiagrawal-site
   branch: main
-  base_url: https://vidhiagrawal.in
-  auth_endpoint: api/auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -11,43 +9,64 @@ public_folder: "/images/uploads"
 collections:
   - name: "resources"
     label: "Resources"
-    file: "_data/resources.yml"
     description: "Articles, videos and tools worth sharing"
-    fields:
-      - name: items
-        label: Resources
-        widget: list
+    files:
+      - name: "resources"
+        label: "All Resources"
+        file: "_data/resources.yml"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - label: "Category"
-            name: "category"
-            widget: "select"
-            options: ["articles", "videos", "tools"]
-          - { label: "Tag (e.g. Fintech, Psychology)", name: "tag", widget: "string" }
-          - label: "Tag Colour"
-            name: "tagColor"
-            widget: "select"
-            options: ["green", "orange", "blue", "purple", "red", "teal"]
-          - { label: "Source (e.g. TED, HBR)", name: "source", widget: "string", required: false }
-          - { label: "Your note about this", name: "note", widget: "string" }
-          - { label: "URL", name: "url", widget: "string" }
-          - label: "Icon"
-            name: "icon"
-            widget: "select"
-            options: ["📄", "▶️", "🛠️"]
+          - name: items
+            label: Resources
+            widget: list
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Article", value: "articles" }
+                  - { label: "Video", value: "videos" }
+                  - { label: "Tool", value: "tools" }
+              - { label: "Tag (e.g. Fintech, Psychology)", name: "tag", widget: "string" }
+              - label: "Tag Colour"
+                name: "tagColor"
+                widget: "select"
+                options:
+                  - { label: "Green", value: "green" }
+                  - { label: "Orange", value: "orange" }
+                  - { label: "Blue", value: "blue" }
+                  - { label: "Purple", value: "purple" }
+                  - { label: "Red", value: "red" }
+                  - { label: "Teal", value: "teal" }
+              - { label: "Source (e.g. TED, HBR)", name: "source", widget: "string", required: false }
+              - { label: "Your note about this", name: "note", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options:
+                  - { label: "Article 📄", value: "📄" }
+                  - { label: "Video ▶️", value: "▶️" }
+                  - { label: "Tool 🛠️", value: "🛠️" }
 
   - name: "courses"
     label: "Courses"
-    file: "_data/courses.yml"
     description: "Your learning log"
-    fields:
-      - name: items
-        label: Courses
-        widget: list
+    files:
+      - name: "courses"
+        label: "All Courses"
+        file: "_data/courses.yml"
         fields:
-          - { label: "Course Name", name: "name", widget: "string" }
-          - { label: "Platform / Instructor", name: "by", widget: "string" }
-          - label: "Status"
-            name: "status"
-            widget: "select"
-            options: ["Completed", "In progress", "Exploring"]
+          - name: items
+            label: Courses
+            widget: list
+            fields:
+              - { label: "Course Name", name: "name", widget: "string" }
+              - { label: "Platform / Instructor", name: "by", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options:
+                  - { label: "Completed", value: "Completed" }
+                  - { label: "In Progress", value: "In progress" }
+                  - { label: "Exploring", value: "Exploring" }
