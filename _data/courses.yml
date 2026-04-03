@@ -1,20 +1,13 @@
 items:
-- name: Photography & Lightroom Editing
-  by: "Udemy · Peter McKinnon"
-  status: In progress
-
-- name: The Science of Well-Being
-  by: "Coursera · Yale University"
-  status: Completed
-
-- name: "Creative Writing: The Craft of Setting and Voice"
-  by: "Coursera · Wesleyan University"
-  status: Completed
-
-- name: Human-Centred Design
-  by: "IDEO · Design Thinking"
-  status: Completed
-
-- name: Beginner Hindi Poetry
-  by: Independent study
-  status: Exploring
+  - name: Claude 101
+    by: Anthropic
+    status: Completed
+  - name: AI Fundamentals with Claude
+    by: Advancing Women in Tech (AWIT)
+    status: Completed
+  - name: AWS Cloud Technical Essentials
+    by: Amazon Web Services
+    status: Completed
+  - name: Introduction to Philosophy
+    by: Coursera
+    status: Completed
