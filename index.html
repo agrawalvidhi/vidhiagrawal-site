@@ -42,7 +42,7 @@ layout: default
 
     <!-- ARTICLES -->
     <div class="tab-content active" id="tab-articles">
-      {% assign articles = site.data.resources | where: "category", "articles" %}
+      {% assign articles = site.data.resources.items | where: "category", "articles" %}
       {% for item in articles %}
       <a href="{{ item.url }}" target="_blank" class="resource-item">
         <div class="r-icon">{{ item.icon }}</div>
@@ -57,7 +57,7 @@ layout: default
 
     <!-- VIDEOS -->
     <div class="tab-content" id="tab-videos">
-      {% assign videos = site.data.resources | where: "category", "videos" %}
+      {% assign videos = site.data.resources.items | where: "category", "videos" %}
       {% for item in videos %}
       <a href="{{ item.url }}" target="_blank" class="resource-item">
         <div class="r-icon">{{ item.icon }}</div>
@@ -72,7 +72,7 @@ layout: default
 
     <!-- TOOLS -->
     <div class="tab-content" id="tab-tools">
-      {% assign tools = site.data.resources | where: "category", "tools" %}
+      {% assign tools = site.data.resources.items | where: "category", "tools" %}
       {% for item in tools %}
       <a href="{{ item.url }}" target="_blank" class="resource-item">
         <div class="r-icon">{{ item.icon }}</div>
@@ -115,7 +115,7 @@ layout: default
     <div class="section-label">Learning log</div>
     <h2 class="section-title">Courses I've <em>taken</em></h2>
     <p class="section-sub">A running log of structured learning outside of formal education — professional, creative, and everything in between.</p>
-    {% for course in site.data.courses %}
+    {% for course in site.data.courses.items %}
     <div class="course-item">
       <div>
         <div class="c-name">{{ course.name }}</div>
