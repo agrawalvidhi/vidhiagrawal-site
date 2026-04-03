@@ -9,13 +9,19 @@
   <div id="nc-root"></div>
   <script src="https://unpkg.com/decap-cms@3.0.12/dist/decap-cms.js"></script>
   <script>
+    // Listen for the token message from the OAuth popup
+    window.addEventListener('message', function(e) {
+      console.log('Message received:', e.data);
+    });
+
     CMS.init({
       config: {
         backend: {
           name: 'github',
           repo: 'agrawalvidhi/vidhiagrawal-site',
           branch: 'main',
-          base_url: 'https://vidhiagrawal-oauth.vidhi-ahd.workers.dev'
+          base_url: 'https://vidhiagrawal-oauth.vidhi-ahd.workers.dev',
+          auth_endpoint: 'auth'
         },
         media_folder: 'images/uploads',
         public_folder: '/images/uploads',
