@@ -35,11 +35,12 @@ items:
       become in our everyday lives.
     url: https://www.netflix.com/title/82074244
     icon: ▶️
-  - title: Notion
+  - title: Google AI Studio
     category: tools
-    tag: Productivity
-    tagColor: blue
-    source: notion.so
-    note: Where I organise everything — research notes, PRDs, strategy docs
-    url: https://www.notion.so
+    tag: Exploratory AI
+    tagColor: purple
+    source: Google
+    note: The tool enables anyone to build an app with just a few prompts - it is
+      fun to try!
+    url: https://aistudio.google.com/apps
     icon: 🛠️
