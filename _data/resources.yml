@@ -8,14 +8,6 @@ items:
     note: The clearest primer on how AA works and why it matters
     url: https://sahamati.org.in
     icon: 📄
-  - title: The Psychology of Everyday Things
-    category: articles
-    tag: Psychology
-    tagColor: purple
-    source: Don Norman
-    note: Why the world is designed the way it is — and why it often fails us
-    url: "#"
-    icon: 📄
   - title: "What are AI Agents? "
     category: videos
     tag: AI Technology
