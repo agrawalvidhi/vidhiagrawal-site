@@ -26,13 +26,14 @@ items:
       market.
     url: https://youtu.be/HsuiJoEj4fU?si=IO-KEw7ZEetAbdjL
     icon: ▶️
-  - title: "Abstract: The Art of Design"
+  - title: The Plastic Detox
     category: videos
-    tag: Design
-    tagColor: red
+    tag: Impact on Life
+    tagColor: green
     source: Netflix Documentary
-    note: Inside the minds of the world's most interesting designers
-    url: "#"
+    note: Interesting facts outlined in the documentary on how pervasive plastic has
+      become in our everyday lives.
+    url: https://www.netflix.com/title/82074244
     icon: ▶️
   - title: Notion
     category: tools
