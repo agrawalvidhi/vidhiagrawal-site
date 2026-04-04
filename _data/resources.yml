@@ -16,13 +16,15 @@ items:
     note: Why the world is designed the way it is — and why it often fails us
     url: "#"
     icon: 📄
-  - title: The Surprising Science of Happiness
+  - title: "What are AI Agents? "
     category: videos
-    tag: Psychology
-    tagColor: purple
+    tag: AI Technology
+    tagColor: blue
     source: TED · Dan Gilbert
-    note: One of the most watched TED talks for a reason
-    url: "#"
+    note: I really liked the way the guest has covered applications of AI. It helped
+      me gain a perspective on what we can do to be prepared for the future job
+      market.
+    url: https://youtu.be/HsuiJoEj4fU?si=IO-KEw7ZEetAbdjL
     icon: ▶️
   - title: "Abstract: The Art of Design"
     category: videos
